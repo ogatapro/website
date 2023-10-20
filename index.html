@@ -1,73 +1,226 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>尾形プロジェクト | AI研究</title>
-  <link rel="stylesheet" href="index.css"> <!-- CSSファイルのリンク -->
+<meta charset="UTF-8"><title>デモ</title>
+  <!--   jQuery・bootstrapライブラリ読み込み -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <!--  /jQuery・bootstrapライブラリ読み込み -->
+
+  <!--  公式からダウンロードしてね -->
+  <link href="https://appsol-one.com/custom/00-page/top/nes.min.css" rel="stylesheet" />
+  <script src="https://appsol-one.com/custom/00-page/top/typed.js"></script>
+  <!--  /公式からダウンロードしてね -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#about">プロジェクトについて</a></li>
-        <li><a href="#research">研究内容</a></li>
-        <li><a href="#team">研究チーム</a></li>
-        <li><a href="#publications">公開論文</a></li>
-        <li><a href="#contact">お問い合わせ</a></li>
-      </ul>
+
+<script src="typed2.js"></script>
+<div class="w-100 flex justify-center items-center p-2 h-full" >
+  <div class="nes-container w-full is-dark is-rounded text-center"
+      style="border-image-repeat: stretch; width: 100% !important; text-align: center; padding-left:5px !important; padding-right:5px !important;">
+	<span id="typed-sample" ></span>
+
+  </div>
+</div>
+<header>
+    <nav class="gnav">
+        <ul class="menu">
+            <li><button id="titile" type="button" class="nes-btn is-primary">SNS</button</li>
+            <li><button id="titile" type="button" class="nes-btn is-primary">Member</button</li>
+            <li><button id="titile" type="button" class="nes-btn is-primary">about</button</li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <main>  
-    <section id="about">
-      <h1>尾形プロジェクトについて</h1>
-      <p>尾形プロジェクトはAI研究に特化した国際的な研究チームです。私たちは機械学習、自然言語処理、コンピュータビジョンなどの分野で優れた成果を追求しています。</p>
-    </section>
+<div class="w-100 flex justify-center items-center p-2 h-full" >
+  <div class="nes-container w-full is-dark is-rounded text-center"
+	style="border-image-repeat: stretch; width: 100% !important; text-align: center; padding-left:5px !important; padding-right:5px !important;">
 
-    <section id="research">
-      <h2>研究内容</h2>
-      <p>尾形プロジェクトでは、以下の研究テーマに取り組んでいます。</p>
-      <ul>
-        <li>ディープラーニングを用いた画像認識の高度化</li>
-        <li>自然言語処理における文脈理解の研究</li>
-        <li>ロボットのための強化学習アルゴリズムの開発</li>
-      </ul>
-    </section>
+  <p id="question" style="margin-top:25px; padding: 15px;">
+	あなたは骨格認識に興味がありますか？<br/>正直に答えてください！
+  </p>
+  <div style="margin-top: 15px;">
+    <label>
+      <input type="radio" class="nes-radio is-dark" name="answer-sample" value="ok" checked />
+	<span>はい</span>
+    </label>
+    <label>
+	<input type="radio" class="nes-radio is-dark" name="answer-sample"  value="ng" />
+	<span>いいえ</span>
+    </label>
+  </div>
 
-    <section id="team">
-      <h2>研究チーム</h2>
-      <p>尾形プロジェクトの研究チームは優秀な研究者から構成されています。私たちは共同研究や知識の共有を重視し、常に最先端の技術とアイデアを追求しています。</p>
-    </section>
+  <button type="button" class="nes-btn is-primary mt-3 " onclick="clickSampleDecide()">
+	けってい
+  </button>
+</div>
 
-    <section id="publications">
-      <h2>公開論文</h2>
-      <p>尾形プロジェクトの研究成果は定期的に国際学会や専門ジャーナルで発表されています。以下は一部の代表的な論文です。</p>
-      <ul>
-        <li>論文タイトル1</li>
-        <li>論文タイトル2</li>
-        <li>論文タイトル3</li>
-      </ul>
-    </section>
 
-    <section id="contact">
-      <h2>お問い合わせ</h2>
-      <p>尾形プロジェクトに関するお問い合わせは以下のフォームからお願いします。</p>
-      <form>
-        <label for="name">お名前</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">メールアドレス</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">メッセージ</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit">送信</button>
-      </form>
-    </section>
-    <iframe class="tumblr" src="https://tumblr.com/ogataproject2023" frameborder="0"></iframe>
-  </main>
+  <div class="nes-dialog is-dark is-rounded" id="dialog-ok" style="display: none;">
+    <form method="dialog">
+	  <p>ありがとうございます！当サイトでは</p>
+    	<menu class="dialog-menu">
+	      <button type="button" class="nes-btn is-error" onclick="closeCheeringModal()">閉じる</button>
+	   </menu>
+    </form>
+  </div>
 
-  <footer>
-    <p>&copy; 2023 尾形プロジェクト. All rights reserved.</p>
-  </footer>
+  <div class="nes-dialog is-dark is-rounded" id="dialog-ng" style="display: none;">
+	<form method="dialog">
+		<p>なるほど〜<br/>このサイトを見てもらったらきっと興味を持ってもらえるようになるでしょう！！</p>
+		<menu class="dialog-menu">
+		  <button type="button" class="nes-btn is-error" onclick="closeCheeringModal()">閉じる</button>
+	    </menu>
+   </form>
+  </div>
+
+</div>
+
+<div id="fullOverlay" style="display: none;"></div>
+<div class="nes-container is-rounded is-dark">
+  <img src="icon.jpg" alt="">
+</div>
+<div class="nes-container is-rounded is-dark">
+  <p>人間とAIロボットが共存できる未来へ</p>
+</div>
+<div class="nes-container is-dark with-title is-centered">
+  <p class="title">活動報告</p>
+
+    <div class="iframe-container">
+      <iframe src="https://ogataproject2023.tumblr.com/"width="600" height="600"></iframe>
+    </div>
+</div>
+
+
+
+<!-- ############ javascript  ############ -->
+<script type="text/javascript">
+$(function(){
+
+// 文章のアニメーションセット
+var typed = new Typed('#typed-sample', {
+	strings: [
+	'こんにちは尾形プロジェクトです。<br/>このページでは日々の活動や成果を発信していきますので是非ご覧になってください。',
+
+　　　　],
+	typeSpeed: 70,
+	backSpeed: 0,
+	startDelay: 1000,
+	loop: false,
+	smartBackspace: true,
+});
+
+
+});
+
+// けっていボタン押下時
+function clickSampleDecide() {
+    if ($('input:radio[name="answer-sample"]:checked').val() == 'ok') {
+	$('#dialog-ok').fadeIn();
+	$('#fullOverlay').fadeIn();
+    }  else {
+	$('#dialog-ng').fadeIn();
+	$('#fullOverlay').fadeIn();
+    }
+  }
+
+// モーダルの閉じるボタン押下時
+function closeCheeringModal() {
+	$('#dialog-ok').fadeOut();
+	$('#dialog-ng').fadeOut();
+	$('#fullOverlay').fadeOut();
+
+}
+
+
+</script>
+<!-- ############ /javascript  ############ -->
+
+
+<!-- ############  style  ############ -->
+<style>
+body {
+  font-family: 'DotGothic16';
+  font-size: 16px; /* フォントサイズを変更 */
+
+  margin: 0;
+}
+
+img {
+  max-width: 100%; /* 画像の最大幅を親要素に合わせる */
+  height: auto; /* 高さを自動調整してアスペクト比を保持 */
+  display: block; /* インライン要素からブロック要素に変更 */
+  margin: 0 auto; /* 中央揃え（必要に応じて） */
+}
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh; /* 高さを大きくするために min-height を調整 */
+  position: relative; /* position: absolute; を position: relative; に変更 */
+  /* top: -20px; */ /* top の指定を削除 */
+  margin: 0 auto; /* 左右中央揃え */
+}
+
+
+.nes-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 101;
+}
+
+#fullOverlay{
+  position: fixed;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(100, 100, 100, .8);
+  z-index: 100;
+}
+
+@media only screen and (max-width: 767px){
+.nes-dialog {
+	width: 100%;
+	text-align: left;
+}
+}
+header {
+    width: 100%; /* 幅いっぱいを指定 */
+    height: 50px; /* 高さを50pxに指定 */
+    padding: 20px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
+    display: flex; /* 中の要素を横並びにする */
+    align-items: center; /* 中の要素を上下中央に並べる */
+z-index: 9999;
+}
+ #title{
+   margin-top: 0;
+ }
+header .gnav .menu {
+    display: flex; /* 中の要素を横並びにする */
+}
+
+header .gnav .menu li {
+    list-style: none; /* リストの[・]を消す */
+}
+
+header .gnav .menu li + li {
+    margin-left: 40px; /* メニューそれぞれに間隔をあけるため */
+}
+
+
+</style>
+<!-- ############  /style  ############ -->
 </body>
 </html>
