@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8"><title>デモ</title>
+<meta charset="UTF-8"><title>尾形プロジェクト</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!--   jQuery・bootstrapライブラリ読み込み -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -31,9 +33,10 @@
 <header>
     <nav class="gnav">
         <ul class="menu">
-            <li><button id="titile" type="button" class="nes-btn is-primary">SNS</button</li>
-            <li><button id="titile" type="button" class="nes-btn is-primary">Member</button</li>
-            <li><button id="titile" type="button" class="nes-btn is-primary">about</button</li>
+            <li><a href="#1"><button　 id="titile" type="button" class="nes-btn is-primary">About</button></a></li>
+            <li><a href="#2"><button id="titile" type="button" class="nes-btn is-primary">成果物</button></a></li>
+            <li><a href="#3"><button id="titile" type="button" class="nes-btn is-primary">Tumblr</button></a></li>
+            <li><a href="#4"><button id="titile" type="button" class="nes-btn is-primary">研究員紹介</button></a></li>
         </ul>
     </nav>
 </header>
@@ -64,7 +67,7 @@
 
   <div class="nes-dialog is-dark is-rounded" id="dialog-ok" style="display: none;">
     <form method="dialog">
-	  <p>ありがとうございます！当サイトでは</p>
+	  <p>ありがとうございます！このプロジェクトでは骨格認識を用いた成果物を作っているので、楽しんで見てもらえると思います</p>
     	<menu class="dialog-menu">
 	      <button type="button" class="nes-btn is-error" onclick="closeCheeringModal()">閉じる</button>
 	   </menu>
@@ -73,7 +76,7 @@
 
   <div class="nes-dialog is-dark is-rounded" id="dialog-ng" style="display: none;">
 	<form method="dialog">
-		<p>なるほど〜<br/>このサイトを見てもらったらきっと興味を持ってもらえるようになるでしょう！！</p>
+		<p>なるほど〜<br/>成果物を見てもらったらきっと興味を持ってもらえるようになるでしょう！！</p>
 		<menu class="dialog-menu">
 		  <button type="button" class="nes-btn is-error" onclick="closeCheeringModal()">閉じる</button>
 	    </menu>
@@ -86,17 +89,137 @@
 <div class="nes-container is-rounded is-dark">
   <img src="icon.jpg" alt="">
 </div>
-<div class="nes-container is-rounded is-dark">
-  <p>人間とAIロボットが共存できる未来へ</p>
+<div class="w-100 flex justify-center items-center p-2 h-full" >
+  <div class="nes-container w-full is-dark is-rounded text-center"
+      style="border-image-repeat: stretch; width: 100% !important; text-align: center; padding-left:5px !important; padding-right:5px !important;">
+	<span id="proj-sample" ></span>
+<h1><a name="1">人間とAIロボットが共存できる未来へ</a></h1>
+<p>現在の社会では人工知能の飛躍的な発展で、AIロボットは急速的に生活や作業などに浸透し始めている。
+<br>そして、「労働力不足」などの社会問題を解決するため、ロボットには大きな期待が寄せられている。<br>
+本プロジェクトでは、これらの状況を背景とし、骨格認識の技術を利用した人間社会に役に立つロボットのプロトタイプを制作すること<br>
+を目標とした。また、将来的にこの技術を利用して多種多様な分野での活用が期待できる。<br>
+危険な火事現場での消火活動や医療では遠隔手術での応用が考えられる。</p>
+
+  </div>
+</div>
+<div class="w-100 flex justify-center items-center p-2 h-full" >
+  <div class="nes-container w-full is-dark is-rounded text-center"
+      style="border-image-repeat: stretch; width: 100% !important; text-align: center; padding-left:5px !important; padding-right:5px !important;">
+	<span id="proj-sample" ></span>
+<h1><a name="2">骨格認識を使用したUFOキャッチャー</a></h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lOMVinMUGak?si=D_ioSkFA47tvskeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>私達は骨格認識ロボットを使ったUFOキャッチャーを制作した。
+<br>従来のボタンやレバーで操作するUFOキャッチャーと違い、ユーザーの手の動きをリアルタイムで認識し
+<br>それをロボットの操作に変換する。これにより、ユーザーは自身の手の動きだけでクレーンを操作することができる。
+<br>手の動きをロボットの操作に変換する技術はmediapipeというGoogleが開発しているオープンソースの機械学習ライブラリ
+<br/>を使用した。また、ロボット本体はdofbotを使用しており、Jetsonが搭載されている。</p>
+<img src="howto.jpg" alt=""width="60%">
+
+
+  </div>
 </div>
 <div class="nes-container is-dark with-title is-centered">
-  <p class="title">活動報告</p>
+  <p class="title"><a name="3">活動報告</a></p>
 
     <div class="iframe-container">
       <iframe src="https://ogataproject2023.tumblr.com/"width="600" height="600"></iframe>
     </div>
 </div>
+<div class="nes-container is-dark with-title">
+  <p class="title"><a name="4">研究者紹介</a></p>
+<!-- Balloon 'is-dark'  -->
+<section class="nes-container is-dark">
+  <section class="message-list">
+      <section class="message -right">
 
+        <!-- Balloon -->
+        <div class="nes-balloon from-left is-dark" id="basket">
+          <p class="intro">名前:Kyousyo<br>
+            尾形プロジェクトのリーダーです。</p>
+
+        </div>
+      </section>
+
+      <section class="message -right">
+        <!-- Balloon -->
+        <div class="nes-balloon from-left is-dark" id="kyo">
+          <p class="intro">名前:Shinki<br>　
+            何 晨毅と申します、趣味は旅行、筋トレ、音楽を聴くことで、
+            <br>休みの日や時間がある日にはよく友達と一緒にドライブとかに行っています。</p>
+        </div>
+
+      </section>
+
+      <section class="message -right">
+        <!-- Balloon -->
+        <div class="nes-balloon from-left is-dark" id="kyo">
+          <p class="intro">名前:Kaku<br>　
+            ポスター、SNS、議事録担当。設計やデザインが得意。</p>
+        </div>
+
+      </section>
+      <section class="message -right">
+        <!-- Balloon -->
+        <div class="nes-balloon from-left is-dark" id="kyo">
+          <p class="intro">名前:Shou<br>　
+            ネットワーク情報学部の章成です。趣味はパソコン、卓球、そしてアニメが好きです。</p>
+        </div>
+
+      </section>
+      <section class="message -right">
+        <!-- Balloon -->
+        <div class="nes-balloon from-left is-dark" id="kyo">
+          <p class="intro">名前:Yudai<br>　
+            このサイトを作ってます。格闘技やバスケットボールを観ること、ゲームをすることが好きです。</p>
+        </div>
+
+      </section>
+      <section class="message -right">
+        <!-- Balloon -->
+        <div class="nes-balloon from-left is-dark" id="kyo">
+          <p class="intro">名前:Kousei<br>　
+            DS所属です。ボカロの歌みたを聴き漁るのに命をかけてます</p>
+        </div>
+
+      </section>
+      <section class="message -right">
+        <!-- Balloon -->
+        <div class="nes-balloon from-left is-dark" id="kyo">
+          <p class="intro">名前:Aoto<br>　
+            塾講師をしている。お酒とガチャが好き。</p>
+        </div>
+
+      </section>
+      <section class="message -right">
+        <!-- Balloon -->
+        <div class="nes-balloon from-left is-dark" id="kyo">
+          <p class="intro">担当教授:Ogata先生</p>
+        </div>
+
+      </section>
+    </section>
+    <img src="panda_02.png" alt="" width="100px" class="panda">
+    <img src="dog_shibainu_white_taremimi.png" alt="" width="100px" class="inu">
+    <img src="usagi_white.png" alt="" width="100px" class="usagi">
+    <img src="game_controller.png" alt="" width="100px" class="game">
+    <img src="ball_basketball.png" alt="" width="80px" class="basketball">
+    <img src="zutomayo.jpg" alt="" width="80px" class="zutomayo">
+    <img src="shirt_tie_hansode_blue.png" alt="" width="70px" class="nekutai">
+    <img src="yama_02.png" alt="" width="100px" class="yama">
+  </section>
+</div>
+<div class="w-100 flex justify-center items-center p-2 h-full" >
+  <div class="nes-container w-full is-dark is-rounded text-center"
+      style="border-image-repeat: stretch; width: 100% !important; text-align: center; padding-left:5px !important; padding-right:5px !important;">
+	<span id="proj-sample" ></span>
+<h1><a name="2">アンケートをお願いします</a></h1>
+
+<a href= "https://docs.google.com/forms/d/e/1FAIpQLSfGPxMrAJTJrqzSkUTD5H60kw3Z9MP19NFknNbp3_QvosAPBw/viewform?usp=pp_url" target="_blank" >こちらから</a>
+
+
+  </div>
+</div>
 
 
 <!-- ############ javascript  ############ -->
@@ -117,7 +240,40 @@ var typed = new Typed('#typed-sample', {
 });
 
 
+
+
 });
+// クリックされたときの処理を定義する関数
+function handleClick() {
+  var typed = new Typed('#proj-sample', {
+    strings: [
+      '人間とAIロボットが共存できる未来へ<br/>このページでは日々の活動や成果を発信していきますので是非ご覧になってください。',
+    ],
+    typeSpeed: 30,
+    backSpeed: 20,
+    startDelay: 1000,
+    loop: false,
+    smartBackspace: true,
+  });
+  var typed = new Typed('#basket', {
+    strings: [
+      'このサイトの管理をしているYDです。最近は格闘技をよく見ています。バスケも好き',
+    ],
+    typeSpeed: 30,
+    backSpeed: 20,
+    startDelay: 1000,
+    loop: false,
+    smartBackspace: true,
+
+  });
+
+  // クリック後に不要になる場合は、クリックイベントリスナーを削除することも考慮する
+  // 例: $('#proj-sample').off('click', handleClick);
+  $('#proj-sample').off('click', handleClick);
+}
+
+// 特定の要素（例: #proj-sample）がクリックされたときに上記の関数を実行
+$('#proj-sample').on('click', handleClick);
 
 // けっていボタン押下時
 function clickSampleDecide() {
@@ -151,12 +307,59 @@ body {
 
   margin: 0;
 }
-
+@media only screen and (max-width: 600px) {
+  /* Your styles for smaller screens */
+}
+.panda{
+  position: absolute;
+  top: 50px;
+left: 100px;
+}
+.inu{
+  position: absolute;
+  top: 200px;
+left: 100px;
+}
+.usagi{
+  position: absolute;
+  top: 325px;
+left: 100px;
+}
+.game{
+  position: absolute;
+  top: 470px;
+left: 100px;
+}
+.basketball{
+  position: absolute;
+  top: 590px;
+left: 100px;
+}
+.zutomayo{
+  position: absolute;
+  top: 710px;
+left: 100px;
+}
+.nekutai{
+  position: absolute;
+  top: 850px;
+left: 100px;
+}
+.yama{
+  position: absolute;
+  top: 960px;
+left: 80px;
+}
 img {
-  max-width: 100%; /* 画像の最大幅を親要素に合わせる */
+  max-width: 80%; /* 画像の最大幅を親要素に合わせる */
   height: auto; /* 高さを自動調整してアスペクト比を保持 */
   display: block; /* インライン要素からブロック要素に変更 */
   margin: 0 auto; /* 中央揃え（必要に応じて） */
+}
+img {
+  max-width: 100%;
+  height: auto;
+
 }
 .iframe-container {
   display: flex;
@@ -176,6 +379,7 @@ img {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 101;
+
 }
 
 #fullOverlay{
@@ -184,6 +388,7 @@ img {
   width: 100%; height: 100%;
   background: rgba(100, 100, 100, .8);
   z-index: 100;
+
 }
 
 @media only screen and (max-width: 767px){
@@ -203,6 +408,7 @@ header {
     display: flex; /* 中の要素を横並びにする */
     align-items: center; /* 中の要素を上下中央に並べる */
 z-index: 9999;
+
 }
  #title{
    margin-top: 0;
@@ -218,8 +424,38 @@ header .gnav .menu li {
 header .gnav .menu li + li {
     margin-left: 40px; /* メニューそれぞれに間隔をあけるため */
 }
-
-
+.intro{
+  color:black;
+}
+.message-list{
+  position: relative;
+  left: 100px;
+}
+#basket{
+  max-width: 70%;
+position: relative;
+left: 100px;
+ margin-left: auto;
+ margin-right: auto;
+}
+#lead{
+  max-width: 70%;
+position: relative;
+left: 100px;
+ margin-left: auto;
+ margin-right: auto;
+}
+#kyo{
+  max-width: 70%;
+position: relative;
+left: 100px;
+ margin-left: auto;
+ margin-right: auto;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
 </style>
 <!-- ############  /style  ############ -->
 </body>
